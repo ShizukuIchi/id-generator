@@ -1,6 +1,6 @@
 function generateIdGenerator(id = 0) {
   let _id = id;
-  return function () {
+  return () => {
     return _id++;
   };
 }
