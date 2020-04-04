@@ -1,8 +1,4 @@
 function generateIdGenerator(id = 0) {
-  let _id = id;
-  return () => {
-    _id += 1;
-    return _id;
-  };
+  return () => id++;
 }
 module.exports = generateIdGenerator;
