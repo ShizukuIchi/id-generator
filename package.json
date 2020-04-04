@@ -37,6 +37,6 @@
     "id"
   ],
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   }
 }
