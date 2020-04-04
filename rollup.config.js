@@ -1,11 +1,11 @@
-import { terser } from 'rollup-plugin-terser';
+import { terser } from "rollup-plugin-terser";
 
 export default [
   {
-    input: 'src/index.js',
+    input: "src/index.js",
     output: {
-      file: 'dist/index.min.js',
-      format: 'cjs',
+      file: "dist/index.js",
+      format: "cjs",
       sourcemap: true,
     },
     plugins: [terser()],
