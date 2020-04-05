@@ -1,4 +1,13 @@
 jobs:
+  coverage:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          name: produce coverage
+          command: npm run coveralls
   release:
     executor:
       name: node/default
@@ -17,7 +26,7 @@ version: 2.1
 workflows:
   test-and-release:
     jobs:
-      - node/test
+      - coverage
       - release:
           requires:
-            - node/test
+            - coverage
