@@ -4,20 +4,22 @@ jobs:
       - image: "circleci/node:latest"
     steps:
       - checkout
-      - node/install-packages
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
           name: build
-          command: npm run build
+          command: yarn build
       - run:
           name: release
-          command: npm run semantic-release || true
+          command: yarn semantic-release || true
 orbs:
   node: circleci/node@2.0.1
 version: 2.1
 workflows:
   test-and-release:
     jobs:
-      - node/test
+      - node/test:
+          pkg-manager: yarn
       - release:
           requires:
             - node/test
