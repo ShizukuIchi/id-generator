@@ -1,16 +1,23 @@
-version: 2
 jobs:
-  build:
+  release:
     docker:
       - image: "circleci/node:latest"
     steps:
       - checkout
+      - node/install-packages
       - run:
-          name: install
-          command: npm install
-      - run:
-          name: test
-          command: npm run test
+          name: build
+          command: npm run build
       - run:
           name: release
-          command: npm run build && npm run semantic-release || true
+          command: npm run semantic-release || true
+orbs:
+  node: circleci/node@2.0.1
+version: 2.1
+workflows:
+  test-and-release:
+    jobs:
+      - node/test
+      - release:
+          requires:
+            - node/test
