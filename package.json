@@ -1,6 +1,6 @@
 {
   "name": "@shizuku/id-generator",
-  "version": "1.0.0",
+  "version": "1.1.4",
   "description": "It generates incremental id of numbers.",
   "license": "MIT",
   "author": "ShizukuIchi <shizukuichi@gmail.com>",
