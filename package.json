@@ -4,7 +4,8 @@
   "description": "It generates incremental id of numbers.",
   "license": "MIT",
   "author": "ShizukuIchi <shizukuichi@gmail.com>",
-  "main": "dist/index.min.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "scripts": {
     "test": "jest",
     "dev": "rollup -c -w",
