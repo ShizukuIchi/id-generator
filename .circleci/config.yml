@@ -6,6 +6,7 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
+          cache-key: yarn.lock
       - run:
           name: build
           command: yarn build
@@ -20,6 +21,7 @@ workflows:
     jobs:
       - node/test:
           pkg-manager: yarn
+          cache-key: yarn.lock
       - release:
           requires:
             - node/test
