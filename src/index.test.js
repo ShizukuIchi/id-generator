@@ -17,4 +17,9 @@ describe("test id-generator", () => {
     const thousand = generateId();
     expect(thousand).toBe(999);
   });
+  it("throw error when not providing an integer", () => {
+    expect(() => {
+      generateIdGenerator("1");
+    }).toThrow("Must provide an integer.");
+  });
 });
